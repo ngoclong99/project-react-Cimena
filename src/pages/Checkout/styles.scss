@@ -1,0 +1,54 @@
+.under-text {
+  border-bottom: 1.5px solid #ffffff;
+  padding: 15px 0;
+}
+.under-text:last-child {
+  border: none;
+}
+.screen-booking {
+  height: 50px;
+  -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0 100%);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0 100%);
+  background-color: white;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 20px;
+}
+.screen-booking::before {
+  content: 'SCREEN';
+  position: absolute;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 19px;
+}
+
+// Seat
+.list-seart {
+  display: flex;
+  flex-wrap: wrap;
+}
+.seat-location {
+  text-align: center;
+  font-weight: bold;
+  width: 8%;
+  margin: 10px 1%;
+  padding: 13px 0;
+}
+.word-spacing {
+  word-spacing: 10px;
+}
+
+// Step css
+.ant-steps-item-title {
+  color: var(--white) !important;
+  cursor: pointer;
+}
+.ant-steps-icon {
+  color: black !important;
+  font-weight: bold;
+  vertical-align: text-top;
+}

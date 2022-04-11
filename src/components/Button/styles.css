@@ -1,0 +1,287 @@
+/* Todo ButtonEffectsColor */
+.glow-on-hover {
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  -webkit-animation: glowing 20s linear infinite;
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.glow-on-hover:active {
+  color: var(--black);
+}
+.glow-on-hover:active:after {
+  background: transparent;
+}
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--black-17);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+@-webkit-keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Todo ButtonDrawBorder */
+
+.draw-border {
+  display: inline-block;
+  position: relative;
+  background: none;
+  border: none;
+}
+.text-draw {
+  display: block;
+}
+.draw-border::before,
+.draw-border::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: var(--white);
+}
+.text-draw::before,
+.text-draw::after {
+  content: '';
+  width: 2px;
+  height: 0;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: var(--white);
+}
+.draw-border:hover::before,
+.draw-border:hover::after {
+  width: 100%;
+}
+.draw-border:hover .text-draw::before,
+.draw-border:hover .text-draw::after {
+  height: 100%;
+}
+/*----- .draw-border 1 -----*/
+.btn-1::before,
+.btn-1::after {
+  transition-delay: 0.2s;
+}
+.btn-1 .text-draw::before,
+.btn-1 .text-draw::after {
+  transition-delay: 0s;
+}
+.btn-1::before {
+  right: 0;
+  top: 0;
+}
+.btn-1::after {
+  left: 0;
+  bottom: 0;
+}
+.btn-1 .text-draw::before {
+  left: 0;
+  top: 0;
+}
+.btn-1 .text-draw::after {
+  right: 0;
+  bottom: 0;
+}
+.btn-1:hover::before,
+.btn-1:hover::after {
+  transition-delay: 0s;
+}
+.btn-1:hover .text-draw::before,
+.btn-1:hover .text-draw::after {
+  transition-delay: 0.2s;
+}
+/*--- .draw-border 2 -------*/
+.btn-2::before,
+.btn-2::after {
+  transition-delay: 0s;
+}
+.btn-2 .text-draw::before,
+.btn-2 .text-draw::after {
+  transition-delay: 0.2s;
+}
+.btn-2::before {
+  right: 0;
+  top: 0;
+}
+.btn-2::after {
+  left: 0;
+  bottom: 0;
+}
+.btn-2 .text-draw::before {
+  left: 0;
+  top: 0;
+}
+.btn-2 .text-draw::after {
+  right: 0;
+  bottom: 0;
+}
+.btn-2:hover::before,
+.btn-2:hover::after {
+  transition-delay: 0.2s;
+}
+.btn-2:hover .text-draw::before,
+.btn-2:hover .text-draw::after {
+  transition-delay: 0s;
+}
+/*----- .draw-border 3 -----*/
+.btn-3::after {
+  left: 0;
+  bottom: 0;
+  transition-delay: 0.6s;
+}
+.btn-3 .text-draw::after {
+  transition-delay: 0.4s;
+  right: 0;
+  bottom: 0;
+}
+.btn-3::before {
+  right: 0;
+  top: 0;
+  transition-delay: 0.2s;
+}
+.btn-3 .text-draw::before {
+  transition-delay: 0s;
+  left: 0;
+  top: 0;
+}
+.btn-3:hover::after {
+  transition-delay: 0s;
+}
+.btn-3:hover .text-draw::after {
+  transition-delay: 0.2s;
+}
+.btn-3:hover::before {
+  transition-delay: 0.4s;
+}
+.btn-3:hover .text-draw::before {
+  transition-delay: 0.6s;
+}
+/*----- .draw-border 4 -----*/
+.btn-4::after {
+  right: 0;
+  bottom: 0;
+  transition-duration: 0.4s;
+}
+.btn-4 .text-draw::after {
+  right: 0;
+  bottom: 0;
+  transition-duration: 0.4s;
+}
+.btn-4::before {
+  left: 0;
+  top: 0;
+  transition-duration: 0.4s;
+}
+.btn-4 .text-draw::before {
+  left: 0;
+  top: 0;
+  transition-duration: 0.4s;
+}
+/*----- .draw-border 5 -----*/
+.btn-5::after {
+  left: 0;
+  bottom: 0;
+  transition-duration: 0.4s;
+}
+.btn-5 .text-draw::after {
+  right: 0;
+  top: 0;
+  transition-duration: 0.4s;
+}
+.btn-5::before {
+  right: 0;
+  top: 0;
+  transition-duration: 0.4s;
+}
+.btn-5 .text-draw::before {
+  left: 0;
+  bottom: 0;
+  transition-duration: 0.4s;
+}
+/*----- .draw-border 6 -----*/
+.btn-6::before {
+  left: 50%;
+  top: 0;
+  transition-duration: 0.4s;
+}
+.btn-6::after {
+  left: 50%;
+  bottom: 0;
+  transition-duration: 0.4s;
+}
+.btn-6 .text-draw::before {
+  left: 0;
+  top: 50%;
+  transition-duration: 0.4s;
+}
+.btn-6 .text-draw::after {
+  right: 0;
+  top: 50%;
+  transition-duration: 0.4s;
+}
+.btn-6:hover::before,
+.btn-6:hover::after {
+  left: 0;
+}
+.btn-6:hover .text-draw::before,
+.btn-6:hover .text-draw::after {
+  top: 0;
+}
